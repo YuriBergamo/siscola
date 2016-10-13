@@ -8,33 +8,13 @@
 </ion-header>
 <ion-content>
     <ion-list>
-        <ion-item>
+        <ion-item *ngFor="let noticia of listaNoticias">
             <ion-avatar item-left>
                 <img src="img/avatar-cher.png">
             </ion-avatar>
-            <h2>Cher</h2>
-            <p>Ugh. As if.</p>
-        </ion-item>
-        <ion-item>
-            <ion-avatar item-left>
-                <img src="img/avatar-cher.png">
-            </ion-avatar>
-            <h2>Cher</h2>
-            <p>Ugh. As if.</p>
-        </ion-item>
-        <ion-item>
-            <ion-avatar item-left>
-                <img src="img/avatar-cher.png">
-            </ion-avatar>
-            <h2>Cher</h2>
-            <p>Ugh. As if.</p>
-        </ion-item>
-        <ion-item>
-            <ion-avatar item-left>
-                <img src="img/avatar-cher.png">
-            </ion-avatar>
-            <h2>Cher</h2>
-            <p>Ugh. As if.</p>
+            <h2>{{noticia.titulo}}</h2>
+            <p>{{noticia.descricao}}</p>
+            <ion-icon name="star" icon-right></ion-icon>
         </ion-item>
     </ion-list>
 

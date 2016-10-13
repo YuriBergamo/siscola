@@ -5,6 +5,7 @@ import { StatusBar } from 'ionic-native';
 import { TabsNoticiasComponent } from '../pages/noticias/tabs/tabs.noticias.component';
 import { GradeComponent } from '../pages/grade/grade.component';
 import { AgendaComponent } from '../pages/agenda/agenda.component';
+import { EventoAgendaComponent } from '../pages/agenda/evento.agenda.component';
 
 
 @Component({
