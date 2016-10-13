@@ -1,20 +1,25 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>Login</ion-title>        
-    </ion-navbar>
+  <ion-navbar color="dark">
+    <ion-avatar item-right>
+        <img style="margin-left:30%;" src="assets/img/logo.png">
+    </ion-avatar>
+  </ion-navbar>
+  <div style="height: 15px; background: #bd2217" ></div>
 </ion-header>
+
 <ion-content padding>
     <ion-list>
         <ion-item class="item-login">
-            <ion-label stacked>Usuario</ion-label>
-            <ion-input type="text" ></ion-input>    
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="aluno.email"></ion-input>
         </ion-item>
         <ion-item class="item-login">
             <ion-label stacked>Senha</ion-label>
-            <ion-input type="password" ></ion-input>    
+            <ion-input type="password" [(ngModel)]="aluno.senha"></ion-input>
         </ion-item>
+        <ion-item></ion-item>
     </ion-list>
-    
-    <button ion-button full>Logar</button>
+
+    <button ion-button full color="danger" (click)="logar()" >Logar</button>
 
 </ion-content>

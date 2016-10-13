@@ -29,9 +29,10 @@ export class GradeComponent implements OnInit{
     }
 
     public setarListaGrade(listaService){
-        console.log("SETAR", listaService);
+
         for(let i=0; i<listaService.length; i++){
             let itemGrade = listaService[i];
+
             if(itemGrade.diaSemana === "A_SEG"){
                 this.listaSegunda.push(itemGrade);
 
@@ -50,6 +51,8 @@ export class GradeComponent implements OnInit{
             }else if(itemGrade.diaSemana === "F_SAB"){
                 this.listaSabado.push(itemGrade);
             }
+
+
         }
 
         this.dia="1";

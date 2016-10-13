@@ -11,7 +11,7 @@ export class NovasNoticiasComponent implements OnInit{
 
 
     private listaNoticias = [];
-
+    private id = 1;
 
     ngOnInit(){
         this.getNoticias();
@@ -25,6 +25,13 @@ export class NovasNoticiasComponent implements OnInit{
                 noticias => this.listaNoticias = noticias,
                 erro => console.log("ERRO NOTICIAS")
             );
+    }
+
+    public buscarProximaImg(){
+
+        let retorno = "assets/img/noticia"+ this.id+".jpg";
+        return retorno;
+
     }
 
 

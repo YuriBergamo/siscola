@@ -11,32 +11,24 @@
     <ion-list>
         <ion-item>
             <ion-label stacked>Data</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataSelecionada"></ion-datetime>
+            <ion-datetime displayFormat="DD/MM/YYYY"  pickerFormat="DD/MM/YYYY" [(ngModel)]="dataSelecionada" (ionChange)="atualizarAgendamentos()"></ion-datetime>
+            <button margin-left="5px;" ion-button item-right color="danger" icon-left round (click)="exibirTodos()">
+                <ion-icon name="open" ></ion-icon>
+                Todos
+            </button>
         </ion-item>
+
     </ion-list>
+
     <ion-list>
-        <ion-item>
-            <h2>Finn</h2>
-            <h3>Don't Know What To Do!</h3>
-            <p>I've had a pretty messed up day. If we just...</p>
-        </ion-item>
-        <ion-item>
-            <h2>Finn</h2>
-            <h3>Don't Know What To Do!</h3>
-            <p>I've had a pretty messed up day. If we just...</p>
-        </ion-item>
-        <ion-item>
-            <h2>Finn</h2>
-            <h3>Don't Know What To Do!</h3>
-            <p>I've had a pretty messed up day. If we just...</p>
-        </ion-item>
-        <ion-item>
-            <h2>Finn</h2>
-            <h3>Don't Know What To Do!</h3>
-            <p>I've had a pretty messed up day. If we just...</p>
+        <ion-item *ngFor="let agenda of listaAgendamentosPorData">
+            <h2><ion-icon color="danger" name="create" item-left></ion-icon>{{agenda.agenda.assunto}}</h2>
+            <h3> <ion-icon color="danger" name="pin" item-left></ion-icon>{{agenda.agenda.local}}</h3>
+            <p>{{agenda.agenda.descricao}}</p>
+          <ion-note item-right>{{agenda.agenda.dataInicioAgenda | date:'dd/MM/yyyy'}}</ion-note>
         </ion-item>
     </ion-list>
     <ion-fab bottom right>
-        <button color="danger" ion-fab><ion-icon name="add"></ion-icon></button>
+        <button color="danger" ion-fab (click)="addAgendamento()"><ion-icon name="add"></ion-icon></button>
     </ion-fab>
 </ion-content>

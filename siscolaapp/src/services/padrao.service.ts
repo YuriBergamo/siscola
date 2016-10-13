@@ -1,5 +1,5 @@
 //definição dos headers
-//definicao da url padrao 
+//definicao da url padrao
 // Statics
 import 'rxjs/add/observable/throw';
 
@@ -12,40 +12,42 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/toPromise';
 
 import { Headers, RequestOptions, Response, Http } from '@angular/http';
+import {Observable} from "rxjs";
 
 export class PadraoService{
-    
-    private headers; 
-    private options; 
-    
+
+    private headers;
+    private options;
+
     private URL_PADRAO = "http://52.87.122.159:8080/siscola/api/";
     constructor(public http:Http){
         this.headers = new Headers({ 'Content-Type': 'application/json' });
         this.options = new RequestOptions({ headers: this.headers });
     }
-    
-    
+
+
     public get(finalUrl){
         let urlFinal = this.URL_PADRAO + finalUrl;
-        
+
          return this.http.get(urlFinal)
                     .map(this.extractData)
                     .catch(this.handleError);
     }
-    
-    public post(body,finalUrl){        
+
+    public post(body,finalUrl){
         let urlFinal = this.URL_PADRAO + finalUrl;
-        return this.http.post(urlFinal, body, this.options)
+        console.log("POST", JSON.stringify(body));
+        return this.http.post(urlFinal, JSON.stringify(body), this.options)
                     .map(this.extractData)
                     .catch(this.handleError);
     }
-    
-    
+
+
     private extractData(res: Response) {
         let body = res.json();
         return body.data || { };
     }
-    
+
     private handleError (error: any) {
       // In a real world app, we might use a remote logging infrastructure
       // We'd also dig deeper into the error to get a better message
@@ -54,5 +56,5 @@ export class PadraoService{
       console.error(errMsg); // log to console instead
       return Observable.throw(errMsg);
     }
-    
+
 }

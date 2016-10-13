@@ -1,7 +1,61 @@
 <ion-header>
-    
+  <ion-navbar color="dark">
+    <ion-title >Novo</ion-title>
+
+    <ion-buttons end>
+      <button color="danger" ion-button icon-only (click)="salvar()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div style="height: 5px; background: #bd2217" ></div>
 </ion-header>
 
-<ion-content>
-    teste
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="create" item-left color="danger"></ion-icon>
+      <ion-label stacked>Assunto</ion-label>
+      <ion-input type="text" [(ngModel)]="agendaAtual.assunto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="paper" item-left color="danger"></ion-icon>
+      <ion-label stacked >Descrição</ion-label>
+      <ion-input type="text" [(ngModel)]="agendaAtual.descricao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pin" item-left color="danger"></ion-icon>
+      <ion-label stacked >Local</ion-label>
+      <ion-input type="text" [(ngModel)]="agendaAtual.local"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-icon name="calendar" item-left color="danger"></ion-icon>
+      <ion-label stacked>Data de Início</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="agendaAtual.dataInicioAgenda"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="time" item-left color="danger"></ion-icon>
+      <ion-label stacked>Hora de Início</ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="agendaAtual.horaInicioAgenda"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="calendar" item-left color="danger"></ion-icon>
+      <ion-label stacked>Data de Encerramento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="agendaAtual.dataFinalAgenda"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="time" item-left color="danger"></ion-icon>
+      <ion-label stacked>Hora de Encerramento</ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="agendaAtual.horaFinalAgenda"></ion-datetime>
+    </ion-item>
+
+    <ion-item></ion-item>
+  </ion-list>
+
 </ion-content>

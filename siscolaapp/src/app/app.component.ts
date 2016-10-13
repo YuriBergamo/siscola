@@ -8,6 +8,7 @@ import { AgendaComponent } from '../pages/agenda/agenda.component';
 import { EventoAgendaComponent } from '../pages/agenda/evento.agenda.component';
 import {AlunoService} from "../services/aluno.service";
 import {Aluno} from "../models/aluno";
+import {LoginComponent} from "../pages/login/login.component";
 
 
 @Component({
@@ -28,24 +29,25 @@ export class MyApp {
 
     private menusExtras = [
       {"nome":"Configuração", "icon":"settings", "view":null, "disable":false},
-      {"nome":"Sair", "icon":"exit", "view":null, "disable":false}
+      {"nome":"Sair", "icon":"exit", "view":LoginComponent, "disable":false}
     ];
 
-    private alunoLogado:Aluno = new Aluno();
 
-    constructor(platform:Platform, menu:MenuController, private alunoService:AlunoService) {
+
+    constructor(platform:Platform, public menuCtrl:MenuController, private alunoService:AlunoService) {
         platform.ready().then(() => {
           // Okay, so the platform is ready and our plugins are available.
           // Here you can do any higher level native things you might need.
           StatusBar.styleDefault();
           this.alunoService.buscarAluno(1).subscribe(
-            (alunoWS) => this.alunoLogado = new Aluno(alunoWS),
+            (alunoWS) => this.alunoService.alunoLogado = new Aluno(alunoWS),
             (error) => console.log("Erro aluno")
           )
         });
     }
 
     mudaMenu(page){
+        this.menuCtrl.close();
         this.nav.setRoot(page.view);
     }
 

@@ -10,24 +10,24 @@
 
 
 <ion-content>
-    <ion-list>
-        <ion-card *ngFor="let noticia of listaNoticias">
-            <ion-item>
+    <ion-list >
+        <ion-card  *ngFor="let noticia of listaNoticias" style="background: #ffffff;">
+            <ion-item style="background: #ffffff">
                 <h1>{{noticia.titulo}}</h1>
             </ion-item>
-            <img class="img-noticias" src="assets/img/noticia1_rosa.jpg">
-            <ion-card-content>
+            <img class="img-noticias" [src]="buscarProximaImg()" >
+            <ion-card-content style="background: #ffffff">
               <p align="justify">{{noticia.descricao}}</p>
             </ion-card-content>
-            <ion-row>
+            <ion-row style="background: #ffffff">
               <ion-col>
-                <button color="danger" ion-button round small>
+                <button color="danger" ion-button clear small>
                   <ion-icon name="star"></ion-icon>
                   <div>Favoritar</div>
                 </button>
               </ion-col>
               <ion-col>
-                <button color="danger" ion-button round small>
+                <button color="danger" ion-button clear small>
                   <ion-icon name="share"></ion-icon>
                   <div>Share</div>
                 </button>

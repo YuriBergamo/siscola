@@ -56,11 +56,11 @@
 }
 
 .img-noticias{
-  max-height: 200px;
-  max-width: 200px;
-  border: 2px solid #ffffff;
-  border-radius: 60px; /* one half of ( (border * 2) + height + padding ) */
-  margin-left:20%;
+  max-height: 300px;
+  max-width: 99%;
+  //border: 1px solid #ffffff;
+  //border-radius: 10px; /* one half of ( (border * 2) + height + padding ) */
+  margin-left:1%;
 
   @media screen and (min-width: 480px) {
     max-height: 300px;
