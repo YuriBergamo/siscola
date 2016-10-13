@@ -1,13 +1,14 @@
 <ion-header>
-    <ion-navbar>
+  <ion-navbar color="dark">
         <ion-title>Grade</ion-title>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
     </ion-navbar>
+    <div style="height: 5px; background: #bd2217" ></div>
 </ion-header>
 <ion-content>
-    <ion-segment [(ngModel)]="dia">
+    <ion-segment color="dark" [(ngModel)]="dia">
         <ion-segment-button value="1">
           SEG
         </ion-segment-button>
@@ -27,56 +28,58 @@
           SAB
         </ion-segment-button>
     </ion-segment>
-    
+
     <div [ngSwitch]="dia">
-        <ion-list *ngSwitchCase="1">
-            <ion-item>
-              <ion-thumbnail item-left>
-                <img src="img/thumbnail-puppy-1.jpg">
-              </ion-thumbnail>
-              <h2>SEGUNDA</h2>
-            </ion-item>        
+        <ion-list *ngSwitchCase="'1'">
+
+            <ion-item *ngFor="let itemGrade of listaSegunda">
+              <div item-left class="horario">
+                {{itemGrade.horaInicio}}
+              </div>
+              <h2>{{itemGrade.tipoAula.nome}}</h2>
+            </ion-item>
+
         </ion-list>
-        <ion-list *ngSwitchCase="2">
-            <ion-item>
-              <ion-thumbnail item-left>
-                <img src="img/thumbnail-puppy-1.jpg">
-              </ion-thumbnail>
-              <h2>TERCA</h2>
-            </ion-item>        
+        <ion-list *ngSwitchCase="'2'">
+            <ion-item *ngFor="let itemGrade of listaTerca">
+              <div item-left class="horario">
+                {{itemGrade.horaInicio}}
+              </div>
+              <h2>{{itemGrade.tipoAula.nome}}</h2>
+            </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="3">
-            <ion-item>
-              <ion-thumbnail item-left>
-                <img src="img/thumbnail-puppy-1.jpg">
-              </ion-thumbnail>
-              <h2>QUARTA</h2>
-            </ion-item>        
+            <ion-item *ngFor="let itemGrade of listaQuarta">
+              <div item-left class="horario">
+                {{itemGrade.horaInicio}}
+              </div>
+              <h2>{{itemGrade.tipoAula.nome}}</h2>
+            </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="4">
-            <ion-item>
-              <ion-thumbnail item-left>
-                <img src="img/thumbnail-puppy-1.jpg">
-              </ion-thumbnail>
-              <h2>QUINTA</h2>
-            </ion-item>        
+          <ion-item *ngFor="let itemGrade of listaQuinta">
+            <div item-left class="horario">
+              {{itemGrade.horaInicio}}
+            </div>
+            <h2>{{itemGrade.tipoAula.nome}}</h2>
+          </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="5">
-            <ion-item>
-              <ion-thumbnail item-left>
-                <img src="img/thumbnail-puppy-1.jpg">
-              </ion-thumbnail>
-              <h2>SEXTA</h2>
-            </ion-item>        
+          <ion-item *ngFor="let itemGrade of listaSexta">
+            <div item-left class="horario">
+              {{itemGrade.horaInicio}}
+            </div>
+            <h2>{{itemGrade.tipoAula.nome}}</h2>
+          </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="6">
-            <ion-item>
-              <ion-thumbnail item-left>
-                <img src="img/thumbnail-puppy-1.jpg">
-              </ion-thumbnail>
-              <h2>SABADO</h2>
-            </ion-item>        
-        </ion-list>  
+          <ion-item *ngFor="let itemGrade of listaSabado">
+            <div item-left class="horario">
+              {{itemGrade.horaInicio}}
+            </div>
+            <h2>{{itemGrade.tipoAula.nome}}</h2>
+          </ion-item>
+        </ion-list>
     </div>
 
 </ion-content>

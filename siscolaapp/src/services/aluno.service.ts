@@ -5,25 +5,25 @@ import {PadraoService} from './padrao.service.ts';
 
 @Injectable()
 export class AlunoService extends PadraoService{
-    
-    public finalUrl ="alunos";
-    
+
+    public finalUrl ="alunos/";
+
     constructor(public http:Http){
-        super(http);        
+        super(http);
     }
-    
+
     public buscarAluno(idAluno:number){
         let url = this.finalUrl + idAluno;
         return super.get(url);
     }
-    
+
     public buscarAgendamentos(idAluno:number){
-        let url = this.finalUrl +"/" + idAluno + "/agendamentos";
-        return super.get(url);        
+        let url = this.finalUrl  + idAluno + "/agendamentos";
+        return super.get(url);
     }
-    
+
     public buscarGrade(idAluno:number){
-        let url = this.finalUrl+"/" + idAluno + "/grade";
-        return super.get(url);        
+        let url = this.finalUrl + idAluno + "/grade";
+        return super.get(url);
     }
 }

@@ -7,9 +7,11 @@ import {Aluno} from '../../models/aluno.ts';
     templateUrl:"login.component.html"
 })
 export class LoginComponent{
-    
+
     public aluno:Aluno = new Aluno();
- 
-    constructor(){   
+
+    constructor(){
     }
+
+
 }

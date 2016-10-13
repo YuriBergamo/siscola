@@ -19,3 +19,65 @@
     margin-bottom: 20px;
     padding: 5%;
 }
+
+
+.avatar-img{
+  border-radius: 45%;
+  margin-left: 7%;
+  margin-top: 7%;
+}
+
+.avatar-text{
+  color: #ffffff;
+  margin-left:20%;
+  font-size: 150%;
+  display: inline;
+}
+
+.img-back{
+  height: 50px; /* or whatever, equal to the image you want 'watermarked' */
+  width: 50px; /* as above */
+  opacity: 0.5; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
+  filter:alpha(opacity=50); /* for <= IE 8 */
+}
+
+.horario{
+  background: radial-gradient( 5px -9px, circle, #f4f4f4 8%, #bd2217 26px );
+  background-color: #bd2217;
+  border: 2px solid #616161;
+  border-radius: 26px; /* one half of ( (border * 2) + height + padding ) */
+
+  color: #f4f4f4;
+  font: bold 15px/13px Helvetica, Verdana, Tahoma;
+  height: 50px;
+  min-width: 14px;
+  padding: 16px 3px 0 3px;
+  text-align: center;
+}
+
+.img-noticias{
+  max-height: 200px;
+  max-width: 200px;
+  border: 2px solid #ffffff;
+  border-radius: 60px; /* one half of ( (border * 2) + height + padding ) */
+  margin-left:20%;
+
+  @media screen and (min-width: 480px) {
+    max-height: 300px;
+    max-width: 300px;
+    margin-left:25%;
+  }
+
+  @media screen and (min-width: 760px) {
+    max-height: 400px;
+    max-width: 400px;
+    margin-left:22%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    max-height: 400px;
+    max-width: 400px;
+    margin-left:30%;
+  }
+}
+

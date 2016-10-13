@@ -1,19 +1,39 @@
 <ion-menu [content]="content">
- 
+
 <!-- The side menu title -->
-  <ion-toolbar>
+
+  <ion-navbar color="dark">
     <ion-title>Menu</ion-title>
-  </ion-toolbar>
- 
-  <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="mudaMenu(p)">
-          <ion-icon [name]="p.icon" item-left></ion-icon>
-        {{p.nome}}
+  </ion-navbar>
+  <div style="height: 5px; background: #bd2217" ></div>
+
+  <ion-content style="background:#424242 !important;">
+    <ion-list no-lines>
+      <ion-item color="dark">
+        <ion-avatar item-left>
+          <img class="avatar-img" src="assets/img/avatar.png" style="width: 50px; height: 57px;">
+        </ion-avatar>
+        <h2 class="avatar-text">{{alunoLogado.nome}}</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list no-lines>
+      <button color="dark" ion-item *ngFor="let menu of menusPrincipais" (click)="mudaMenu(menu)">
+          <ion-icon [name]="menu.icon" item-left></ion-icon>
+        {{menu.nome}}
+      </button>
+
+      <ion-item-divider>
+        Opções
+      </ion-item-divider>
+
+      <button color="dark" *ngFor="let menu of menusExtras" ion-item icon-left (click)="mudaMenu(menu)">
+        <ion-icon [name]="menu.icon"></ion-icon>
+        {{menu.nome}}
       </button>
     </ion-list>
   </ion-content>
- 
+
 </ion-menu>
 
 <ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
