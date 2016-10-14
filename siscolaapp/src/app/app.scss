@@ -22,16 +22,33 @@
 
 
 .avatar-img{
-  border-radius: 45%;
+
+  border: 2px solid color($colors, danger, base);
+  border-radius: 50%;
   margin-left: 7%;
-  margin-top: 7%;
+  margin-top: 10%;
+  width: 100px;
+  height: 105px;
+  margin-right: 30px;
 }
 
 .avatar-text{
-  color: #ffffff;
-  margin-left:20%;
-  font-size: 150%;
+  color: color($colors, dark_plus, base);
+  font-size: 150% !important;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   display: inline;
+}
+.background-menu{
+  //background: linear-gradient(#424242, #424242) !important;
+  //background: #FA4701;
+  background: #f1f1f1;
+}
+
+.background-faixa{
+  //background: linear-gradient(#424242, #424242) !important;
+  //background: #FA4701;
+  background: color($colors, danger, base) !important;
+  height: 5px;
 }
 
 .img-back{
@@ -42,12 +59,11 @@
 }
 
 .horario{
-  background: radial-gradient( 5px -9px, circle, #f4f4f4 8%, #bd2217 26px );
-  background-color: #bd2217;
+  background-color: color($colors, gray, base);
   border: 2px solid #616161;
   border-radius: 26px; /* one half of ( (border * 2) + height + padding ) */
 
-  color: #f4f4f4;
+  color: #f1f1f1;
   font: bold 15px/13px Helvetica, Verdana, Tahoma;
   height: 50px;
   min-width: 14px;
@@ -81,3 +97,53 @@
   }
 }
 
+
+.img-login{
+  margin-left:30%;
+  margin-top:5%;
+  width: 150px;
+  height: 150px;
+  @media screen and (min-width: 480px) {
+    margin-left:40%;
+  }
+
+}
+
+.tutorial-page {
+
+  .toolbar-background {
+    background: #fff;
+    border-color: transparent;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: 2.8rem;
+  }
+
+  .slide-image {
+    height: 300px !important;
+    width: 300px !important;
+    margin: 18px 0;
+    border-radius: 200px !important;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #60646B;
+
+    b {
+      color: #000000;
+    }
+  }
+
+}

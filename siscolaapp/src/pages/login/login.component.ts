@@ -4,6 +4,7 @@ import {LoginService} from "../../services/login.service";
 import {AlunoService} from "../../services/aluno.service";
 import {NavController} from "ionic-angular";
 import {TabsNoticiasComponent} from "../noticias/tabs/tabs.noticias.component";
+import {NativeStorage} from "ionic-native";
 
 
 @Component({
@@ -25,7 +26,6 @@ export class LoginComponent{
           },
           (erro) => console.log("Erro LOgin")
         );*/
-
         this.navController.setRoot(TabsNoticiasComponent);
     }
 

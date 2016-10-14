@@ -5,29 +5,29 @@
   <ion-navbar color="dark">
     <ion-title>Menu</ion-title>
   </ion-navbar>
-  <div style="height: 5px; background: #bd2217" ></div>
+  <div class="background-faixa" ></div>
 
-  <ion-content style="background:#424242 !important;">
-    <ion-list no-lines>
-      <ion-item color="dark">
-        <ion-avatar item-left>
-          <img class="avatar-img" src="assets/img/avatar.png" style="width: 50px; height: 57px;">
-        </ion-avatar>
+  <ion-content class="background-menu">
+    <ion-list no-lines >
+      <ion-item style="background-color: transparent !important;">
+        <div item-left>
+          <img class="avatar-img" src="assets/img/aline_silva_logo.jpg" >
+        </div>
         <h2 class="avatar-text">{{alunoService.alunoLogado.nome}}</h2>
+        <p>{{alunoService.alunoLogado.escola.nome}}</p>
       </ion-item>
     </ion-list>
-
-    <ion-list no-lines>
-      <button color="dark" ion-item *ngFor="let menu of menusPrincipais" (click)="mudaMenu(menu)">
+    <ion-list>
+      <button  ion-item *ngFor="let menu of menusPrincipais" (click)="mudaMenu(menu)">
           <ion-icon [name]="menu.icon" item-left></ion-icon>
         {{menu.nome}}
       </button>
 
-      <ion-item-divider>
+      <ion-item-divider style="background-color: transparent !important;">
         Opções
       </ion-item-divider>
 
-      <button color="dark" *ngFor="let menu of menusExtras" ion-item icon-left (click)="mudaMenu(menu)">
+      <button *ngFor="let menu of menusExtras" ion-item icon-left (click)="mudaMenu(menu)">
         <ion-icon [name]="menu.icon"></ion-icon>
         {{menu.nome}}
       </button>

@@ -13,6 +13,7 @@ import { LoginComponent } from '../pages/login/login.component';
 import { EscolaService } from '../services/escola.service';
 import { AlunoService } from '../services/aluno.service';
 import { LoginService } from '../services/login.service';
+import {TutorialComponent} from "../pages/tutorial/tutorial.component";
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { LoginService } from '../services/login.service';
     GradeComponent,
     AgendaComponent,
     EventoAgendaComponent,
-    LoginComponent
-      
+    LoginComponent,
+    TutorialComponent
+
   ],
   imports: [
     HttpModule,
@@ -38,7 +40,8 @@ import { LoginService } from '../services/login.service';
     GradeComponent,
     AgendaComponent,
     EventoAgendaComponent,
-    LoginComponent
+    LoginComponent,
+    TutorialComponent
   ],
   providers: [
       EscolaService,

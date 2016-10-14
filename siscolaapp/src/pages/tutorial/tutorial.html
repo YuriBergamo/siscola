@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-navbar color="dark">
+    <ion-title>Anglo Bauru</ion-title>
+  </ion-navbar>
+  <div class="background-faixa" ></div>
+</ion-header>
+
+<ion-content class="tutorial-page">
+  <ion-slides #slider pager>
+    <ion-slide>
+      <img src="assets/img/logo.png" class="slide-image"/>
+      <p>Bem vindo ao aplicativo de comunicação do Anglo Bauru</p>
+      <button (click)="proximoSlide()" color="danger" clear large ion-button>Proximo</button>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/dia.jpg" class="slide-image"/>
+      <h2 class="slide-title">Dia a dia</h2>
+      <p > Fique por dentro do dia a dia da escola, receba notícias, grade de aulas,  boletim, enquetes e muito mais.</p>
+      <button (click)="proximoSlide()" color="danger" clear large ion-button>Proximo</button>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/img/integracao.jpg" class="slide-image"/>
+      <h2 class="slide-title">Integração</h2>
+      <p > Permite uma comunicação direta entre escola, professor, aluno e seu pai ou responsável, por meio do envio de mensagens e notificações.</p>
+      <button (click)="proximoSlide()" color="danger" clear large ion-button>Proximo</button>
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/img/start.jpg" class="slide-image"/>
+      <h2 class="slide-title">Podemos Comear?</h2>
+      <button color="danger" ion-button large clear icon-right (click)="comecar()">
+        Começar
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicApp, Platform, NavController, MenuController, Nav } from 'ionic-angular';
-import { StatusBar } from 'ionic-native';
+import { IonicApp, Platform, MenuController, Nav } from 'ionic-angular';
+import {StatusBar} from 'ionic-native';
 
 import { TabsNoticiasComponent } from '../pages/noticias/tabs/tabs.noticias.component';
 import { GradeComponent } from '../pages/grade/grade.component';
@@ -9,6 +9,7 @@ import { EventoAgendaComponent } from '../pages/agenda/evento.agenda.component';
 import {AlunoService} from "../services/aluno.service";
 import {Aluno} from "../models/aluno";
 import {LoginComponent} from "../pages/login/login.component";
+import {TutorialComponent} from "../pages/tutorial/tutorial.component";
 
 
 @Component({
@@ -17,7 +18,7 @@ import {LoginComponent} from "../pages/login/login.component";
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage = TabsNoticiasComponent;
+    rootPage = TutorialComponent;
     private menusPrincipais = [
         {"nome":"Notícias", "icon":"paper", "view":TabsNoticiasComponent, "disable":false},
         {"nome":"Grade de Horário", "icon":"time", "view":GradeComponent, "disable":false},
@@ -29,6 +30,7 @@ export class MyApp {
 
     private menusExtras = [
       {"nome":"Configuração", "icon":"settings", "view":null, "disable":false},
+      {"nome":"Tutorial", "icon":"book", "view":TutorialComponent, "disable":false},
       {"nome":"Sair", "icon":"exit", "view":LoginComponent, "disable":false}
     ];
 
@@ -42,7 +44,21 @@ export class MyApp {
           this.alunoService.buscarAluno(1).subscribe(
             (alunoWS) => this.alunoService.alunoLogado = new Aluno(alunoWS),
             (error) => console.log("Erro aluno")
-          )
+          );
+
+          /*NativeStorage.getItem('siscola')
+            .then(
+              data => {
+                  if(data.tutorial){
+                    rootPage = LoginComponent;
+                  }else if(data.login){
+                    rootPage = TabsNoticiasComponent;
+                  }else{
+                    rootPage = TutorialComponent;
+                  }
+              },
+              error => console.error(error)
+            );*/
         });
     }
 

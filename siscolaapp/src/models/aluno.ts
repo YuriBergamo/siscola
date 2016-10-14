@@ -12,8 +12,9 @@ export class Aluno{
     public token:string;
     public escola:Escola;
     public turma:Turma;
-    
+
     constructor(json?){
+        this.escola = new Escola();
         if(json){
             this.id = json.id;
             this.email = json.email;
@@ -24,8 +25,8 @@ export class Aluno{
             this.fotoPerfil = json.fotoPerfil;
             this.token = json.token;
             this.escola =  new Escola(json.escola);
-            this.turma = new Turma(json.turma);             
+            this.turma = new Turma(json.turma);
         }
     }
-    
+
 }
